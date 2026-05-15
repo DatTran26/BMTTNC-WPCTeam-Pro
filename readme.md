@@ -102,27 +102,27 @@ cd ../..
 
 | File | Chức năng chính | Giải thích | Cách chạy nhanh |
 |---|---|---|---|
-| [`lab_01/Text_01.py`](lab_01/Text_01.py) | In thông tin cá nhân/nhóm | [`Giải thích`](lab_01/explain/Text_01.md) | `python lab_01/Text_01.py` |
-| [`lab_01/ex01/Text_01.py`](lab_01/ex01/Text_01.py) | In thông tin cá nhân/nhóm | [`Giải thích`](lab_01/ex01/explain/Text_01.md) | `python lab_01/ex01/Text_01.py` |
-| [`lab_01/ex02/ex02_01.py`](lab_01/ex02/ex02_01.py) | Nhập tên, tuổi và in lời chào | [`Giải thích`](lab_01/ex02/explain/ex02_01.md) | `python lab_01/ex02/ex02_01.py` |
-| [`lab_01/ex02/ex02_02.py`](lab_01/ex02/ex02_02.py) | Tính diện tích hình tròn | [`Giải thích`](lab_01/ex02/explain/ex02_02.md) | `python lab_01/ex02/ex02_02.py` |
-| [`lab_01/ex02/ex02_03.py`](lab_01/ex02/ex02_03.py) | Kiểm tra số chẵn/lẻ | [`Giải thích`](lab_01/ex02/explain/ex02_03.md) | `python lab_01/ex02/ex02_03.py` |
-| [`lab_01/ex02/ex02_04.py`](lab_01/ex02/ex02_04.py) | Lọc số chia hết cho 7 và không chia hết cho 5 | [`Giải thích`](lab_01/ex02/explain/ex02_04.md) | `python lab_01/ex02/ex02_04.py` |
-| [`lab_01/ex02/ex02_05.py`](lab_01/ex02/ex02_05.py) | Tính lương tuần, có tăng ca | [`Giải thích`](lab_01/ex02/explain/ex02_05.md) | `python lab_01/ex02/ex02_05.py` |
-| [`lab_01/ex02/ex02_06.py`](lab_01/ex02/ex02_06.py) | Tạo ma trận theo X, Y | [`Giải thích`](lab_01/ex02/explain/ex02_06.md) | `python lab_01/ex02/ex02_06.py` |
-| [`lab_01/ex02/ex02_07.py`](lab_01/ex02/ex02_07.py) | Nhập nhiều dòng và chuyển sang chữ hoa | [`Giải thích`](lab_01/ex02/explain/ex02_07.md) | `python lab_01/ex02/ex02_07.py` |
-| [`lab_01/ex02/ex02_08.py`](lab_01/ex02/ex02_08.py) | Lọc số nhị phân chia hết cho 5 | [`Giải thích`](lab_01/ex02/explain/ex02_08.md) | `python lab_01/ex02/ex02_08.py` |
-| [`lab_01/ex02/ex02_09.py`](lab_01/ex02/ex02_09.py) | Kiểm tra số nguyên tố | [`Giải thích`](lab_01/ex02/explain/ex02_09.md) | `python lab_01/ex02/ex02_09.py` |
-| [`lab_01/ex02/ex02_10.py`](lab_01/ex02/ex02_10.py) | Đảo ngược chuỗi | [`Giải thích`](lab_01/ex02/explain/ex02_10.md) | `python lab_01/ex02/ex02_10.py` |
-| [`lab_01/ex03/ex03_01.py`](lab_01/ex03/ex03_01.py) | Tính tổng các số chẵn trong dãy | [`Giải thích`](lab_01/ex03/explain/ex03_01.md) | `python lab_01/ex03/ex03_01.py` |
-| [`lab_01/ex03/ex03_02.py`](lab_01/ex03/ex03_02.py) | Đảo ngược chuỗi bằng hàm | [`Giải thích`](lab_01/ex03/explain/ex03_02.md) | `python lab_01/ex03/ex03_02.py` |
-| [`lab_01/ex03/ex03_03.py`](lab_01/ex03/ex03_03.py) | Chuyển list sang tuple | [`Giải thích`](lab_01/ex03/explain/ex03_03.md) | `python lab_01/ex03/ex03_03.py` |
-| [`lab_01/ex03/ex03_04.py`](lab_01/ex03/ex03_04.py) | Lấy phần tử đầu/cuối của tuple | [`Giải thích`](lab_01/ex03/explain/ex03_04.md) | `python lab_01/ex03/ex03_04.py` |
-| [`lab_01/ex03/ex03_05.py`](lab_01/ex03/ex03_05.py) | Đếm số lần xuất hiện của từng từ | [`Giải thích`](lab_01/ex03/explain/ex03_05.md) | `python lab_01/ex03/ex03_05.py` |
-| [`lab_01/ex03/ex03_06.py`](lab_01/ex03/ex03_06.py) | Xóa key khỏi dictionary | [`Giải thích`](lab_01/ex03/explain/ex03_06.md) | `python lab_01/ex03/ex03_06.py` |
-| [`lab_01/ex04/main.py`](lab_01/ex04/main.py) | Menu chính quản lý sinh viên | [`Giải thích`](lab_01/ex04/explain/main.md) | `cd lab_01/ex04 && python main.py` |
-| [`lab_01/ex04/QuanLySinhVien.py`](lab_01/ex04/QuanLySinhVien.py) | Class xử lý nghiệp vụ sinh viên | [`Giải thích`](lab_01/ex04/explain/QuanLySinhVien.md) | Chạy qua `main.py` |
-| [`lab_01/ex04/SinhVien.py`](lab_01/ex04/SinhVien.py) | Class lưu thông tin sinh viên | [`Giải thích`](lab_01/ex04/explain/SinhVien.md) | Chạy qua `main.py` |
+| <a href="lab_01/Text_01.py" target="_blank" rel="noopener noreferrer"><code>lab_01/Text_01.py</code></a> | In thông tin cá nhân/nhóm | <a href="lab_01/explain/Text_01.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/Text_01.py` |
+| <a href="lab_01/ex01/Text_01.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex01/Text_01.py</code></a> | In thông tin cá nhân/nhóm | <a href="lab_01/ex01/explain/Text_01.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex01/Text_01.py` |
+| <a href="lab_01/ex02/ex02_01.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_01.py</code></a> | Nhập tên, tuổi và in lời chào | <a href="lab_01/ex02/explain/ex02_01.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_01.py` |
+| <a href="lab_01/ex02/ex02_02.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_02.py</code></a> | Tính diện tích hình tròn | <a href="lab_01/ex02/explain/ex02_02.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_02.py` |
+| <a href="lab_01/ex02/ex02_03.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_03.py</code></a> | Kiểm tra số chẵn/lẻ | <a href="lab_01/ex02/explain/ex02_03.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_03.py` |
+| <a href="lab_01/ex02/ex02_04.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_04.py</code></a> | Lọc số chia hết cho 7 và không chia hết cho 5 | <a href="lab_01/ex02/explain/ex02_04.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_04.py` |
+| <a href="lab_01/ex02/ex02_05.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_05.py</code></a> | Tính lương tuần, có tăng ca | <a href="lab_01/ex02/explain/ex02_05.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_05.py` |
+| <a href="lab_01/ex02/ex02_06.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_06.py</code></a> | Tạo ma trận theo X, Y | <a href="lab_01/ex02/explain/ex02_06.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_06.py` |
+| <a href="lab_01/ex02/ex02_07.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_07.py</code></a> | Nhập nhiều dòng và chuyển sang chữ hoa | <a href="lab_01/ex02/explain/ex02_07.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_07.py` |
+| <a href="lab_01/ex02/ex02_08.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_08.py</code></a> | Lọc số nhị phân chia hết cho 5 | <a href="lab_01/ex02/explain/ex02_08.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_08.py` |
+| <a href="lab_01/ex02/ex02_09.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_09.py</code></a> | Kiểm tra số nguyên tố | <a href="lab_01/ex02/explain/ex02_09.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_09.py` |
+| <a href="lab_01/ex02/ex02_10.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_10.py</code></a> | Đảo ngược chuỗi | <a href="lab_01/ex02/explain/ex02_10.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_10.py` |
+| <a href="lab_01/ex03/ex03_01.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex03/ex03_01.py</code></a> | Tính tổng các số chẵn trong dãy | <a href="lab_01/ex03/explain/ex03_01.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex03/ex03_01.py` |
+| <a href="lab_01/ex03/ex03_02.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex03/ex03_02.py</code></a> | Đảo ngược chuỗi bằng hàm | <a href="lab_01/ex03/explain/ex03_02.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex03/ex03_02.py` |
+| <a href="lab_01/ex03/ex03_03.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex03/ex03_03.py</code></a> | Chuyển list sang tuple | <a href="lab_01/ex03/explain/ex03_03.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex03/ex03_03.py` |
+| <a href="lab_01/ex03/ex03_04.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex03/ex03_04.py</code></a> | Lấy phần tử đầu/cuối của tuple | <a href="lab_01/ex03/explain/ex03_04.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex03/ex03_04.py` |
+| <a href="lab_01/ex03/ex03_05.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex03/ex03_05.py</code></a> | Đếm số lần xuất hiện của từng từ | <a href="lab_01/ex03/explain/ex03_05.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex03/ex03_05.py` |
+| <a href="lab_01/ex03/ex03_06.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex03/ex03_06.py</code></a> | Xóa key khỏi dictionary | <a href="lab_01/ex03/explain/ex03_06.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex03/ex03_06.py` |
+| <a href="lab_01/ex04/main.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex04/main.py</code></a> | Menu chính quản lý sinh viên | <a href="lab_01/ex04/explain/main.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `cd lab_01/ex04 && python main.py` |
+| <a href="lab_01/ex04/QuanLySinhVien.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex04/QuanLySinhVien.py</code></a> | Class xử lý nghiệp vụ sinh viên | <a href="lab_01/ex04/explain/QuanLySinhVien.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | Chạy qua `main.py` |
+| <a href="lab_01/ex04/SinhVien.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex04/SinhVien.py</code></a> | Class lưu thông tin sinh viên | <a href="lab_01/ex04/explain/SinhVien.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | Chạy qua `main.py` |
 
 ## Luồng hoạt động mini project `ex04`
 
@@ -158,4 +158,5 @@ main.py
 
 ## License
 
-Dự án phát hành theo giấy phép `MIT`. Xem chi tiết tại [`LICENSE`](LICENSE).
+Dự án phát hành theo giấy phép `MIT`. Xem chi tiết tại <a href="LICENSE" target="_blank" rel="noopener noreferrer"><code>LICENSE</code></a>.
+
