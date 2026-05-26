@@ -1,6 +1,6 @@
 ﻿# BMTTNC - WPC Team Pro
 
-> Bộ bài tập Python cơ bản (Lab 01) của **Trần Tấn Đạt - 2380600468**.
+> Bộ bài tập Python cơ bản và mã hóa cổ điển (Lab 01-03) của **Trần Tấn Đạt - 2380600468**.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![Status](https://img.shields.io/badge/Status-Learning-green)
@@ -8,7 +8,7 @@
 
 ## Giới thiệu
 
-Repository này lưu các bài thực hành Python trong **Lab 01**, gồm từ thao tác nhập/xuất cơ bản đến mini project quản lý sinh viên bằng giao diện dòng lệnh.
+Repository này lưu các bài thực hành Python trong **Lab 01**, **Lab 02** và **Lab 03**, gồm bài tập Python căn bản, thuật toán mã hóa cổ điển, API Flask và giao diện PyQt5.
 
 Mục tiêu:
 
@@ -17,6 +17,8 @@ Mục tiêu:
 - Sử dụng list, tuple, dictionary
 - Viết hàm xử lý dữ liệu đơn giản
 - Xây dựng chương trình CLI quản lý sinh viên
+- Triển khai các thuật toán mã hóa cổ điển
+- Xây dựng API Flask, giao diện web và ứng dụng PyQt5 gọi API
 
 ## Cấu trúc dự án
 
@@ -46,14 +48,37 @@ BMTTNC-WPCTeam-Pro/
 │           ├── main.md
 │           ├── QuanLySinhVien.md
 │           └── SinhVien.md
+├── lab_02/
+│   ├── ex01/
+│   │   ├── Caesar.py
+│   │   └── Vigenere.py
+│   └── ex01_API/
+│       ├── api.py
+│       ├── cipher/
+│       │   ├── caesar/
+│       │   ├── playfair/
+│       │   ├── railfence/
+│       │   ├── transposition/
+│       │   └── vigenere/
+│       ├── postman/
+│       ├── static/
+│       └── templates/
+├── lab_03/
+│   ├── caesar_cipher.py
+│   ├── ui/
+│   │   ├── caesar.py
+│   │   └── caesar.ui
+│   └── platform/
 ├── img/
 ├── LICENSE
+├── requirements.txt
 └── readme.md
 ```
 
 ## Yêu cầu môi trường
 
 - Python `3.10+` khuyến nghị
+- Flask, Requests, PyQt5 trong `requirements.txt`
 - Terminal: PowerShell, CMD, Git Bash hoặc terminal trong VS Code
 
 Kiểm tra Python:
@@ -63,6 +88,12 @@ python --version
 ```
 
 Nếu máy dùng `python3`, thay `python` bằng `python3` trong các lệnh bên dưới.
+
+### Cài thư viện
+
+```bash
+python -m pip install -r requirements.txt
+```
 
 ## Cách chạy
 
@@ -96,12 +127,60 @@ Quay lại thư mục gốc:
 cd ../..
 ```
 
+### Chạy Flask UI Lab 02
+
+```bash
+cd lab_02/ex01_API
+python api.py
+```
+
+Mở trình duyệt tại:
+
+```text
+http://127.0.0.1:5000
+```
+
+API root:
+
+```text
+http://127.0.0.1:5000/api
+```
+
+UI có tab cho `Caesar`, `Vigenere`, `Playfair`, `Rail Fence`, `Transposition`.
+
+Postman collection và hướng dẫn test API:
+
+```text
+lab_02/ex01_API/postman/api-cipher.postman_collection.json
+lab_02/ex01_API/postman/postman-usage-guide.md
+```
+
+### Chạy PyQt5 UI Lab 03
+
+Mở terminal tại thư mục gốc dự án. Trước khi chạy UI, cần chạy Flask API của Lab 02 ở một terminal khác.
+
+```bash
+python lab_03/caesar_cipher.py
+```
+
+Ứng dụng Lab 03 gọi API Caesar tại:
+
+```text
+http://127.0.0.1:5000/api/caesar/encrypt
+http://127.0.0.1:5000/api/caesar/decrypt
+```
+
 ## Danh sách file, chức năng và giải thích
 
 > Bấm vào tên file để mở mã nguồn. Bấm vào `Giải thích` để xem mô tả chi tiết hàm và luồng xử lý trong từng file.
 
 | File | Chức năng chính | Giải thích | Cách chạy nhanh |
 |---|---|---|---|
+| <a href="lab_02/ex01_API/api.py" target="_blank" rel="noopener noreferrer"><code>lab_02/ex01_API/api.py</code></a> | Flask API và web UI cho các thuật toán mã hóa | Postman: <a href="lab_02/ex01_API/postman/postman-usage-guide.md" target="_blank" rel="noopener noreferrer"><code>Hướng dẫn</code></a> | `cd lab_02/ex01_API && python api.py` |
+| <a href="lab_02/ex01_API/static/app.js" target="_blank" rel="noopener noreferrer"><code>lab_02/ex01_API/static/app.js</code></a> | Xử lý tab thuật toán, gọi API encrypt/decrypt | - | Chạy qua Flask UI |
+| <a href="lab_02/ex01_API/templates/index.html" target="_blank" rel="noopener noreferrer"><code>lab_02/ex01_API/templates/index.html</code></a> | Giao diện web Cipher Workbench | - | Chạy qua Flask UI |
+| <a href="lab_03/caesar_cipher.py" target="_blank" rel="noopener noreferrer"><code>lab_03/caesar_cipher.py</code></a> | Ứng dụng PyQt5 Caesar gọi API Flask | - | `python lab_03/caesar_cipher.py` |
+| <a href="lab_03/ui/caesar.py" target="_blank" rel="noopener noreferrer"><code>lab_03/ui/caesar.py</code></a> | Mã giao diện PyQt5 sinh từ file `.ui` | - | Chạy qua `caesar_cipher.py` |
 | <a href="lab_01/Text_01.py" target="_blank" rel="noopener noreferrer"><code>lab_01/Text_01.py</code></a> | In thông tin cá nhân/nhóm | <a href="lab_01/explain/Text_01.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/Text_01.py` |
 | <a href="lab_01/ex01/Text_01.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex01/Text_01.py</code></a> | In thông tin cá nhân/nhóm | <a href="lab_01/ex01/explain/Text_01.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex01/Text_01.py` |
 | <a href="lab_01/ex02/ex02_01.py" target="_blank" rel="noopener noreferrer"><code>lab_01/ex02/ex02_01.py</code></a> | Nhập tên, tuổi và in lời chào | <a href="lab_01/ex02/explain/ex02_01.md" target="_blank" rel="noopener noreferrer"><code>Giải thích</code></a> | `python lab_01/ex02/ex02_01.py` |
