@@ -1,5 +1,3 @@
-﻿# BMTTNC - WPC Team Pro
-
 <p align="center">
   <img src="img/LOGO%201.png" alt="WPC Team" width="760">
 </p>
