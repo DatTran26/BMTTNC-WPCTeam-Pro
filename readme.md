@@ -1,5 +1,9 @@
 ﻿# BMTTNC - WPC Team Pro
 
+<p align="center">
+  <img src="img/LOGO%201.png" alt="WPC Team" width="760">
+</p>
+
 > Bộ bài tập Python cơ bản và mã hóa cổ điển (Lab 01-03) của **Trần Tấn Đạt - 2380600468**.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
