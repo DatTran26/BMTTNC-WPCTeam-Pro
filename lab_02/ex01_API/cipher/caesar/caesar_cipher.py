@@ -3,27 +3,21 @@ from cipher.caesar import ALPHABET
 class CaesarCipher:
     def __init__(self):
         self.alphabet = ALPHABET
-    
-    def encrypt_text (self, text:str,key:int):
-        alphabet_len =len(self.alphabet)
-        text=text.upper()
-        encrypt_text=[]
 
-        for letter in text:
-            letter_index= self.alphabet.index(letter) 
-            output_index = (letter_index +key )% alphabet_len
-            output_letter = self.alphabet[output_index]
-            encrypt_text.append(output_letter)
-        return ''.join(encrypt_text)
+    def shift_char(self, char: str, key: int) -> str:
+        if "A" <= char <= "Z":
+            ascii_offset = ord("A")
+        elif "a" <= char <= "z":
+            ascii_offset = ord("a")
+        else:
+            return char
 
-    def decrypt_text (self, text:str,key:int):
-        alphabet_len =len(self.alphabet)
-        text=text.upper()
-        decrypt_text=[]
+        return chr((ord(char) - ascii_offset + key) % len(self.alphabet) + ascii_offset)
 
-        for letter in text:
-            letter_index= self.alphabet.index(letter) 
-            output_index = (letter_index - key )% alphabet_len
-            output_letter = self.alphabet[output_index]
-            decrypt_text.append(output_letter)
-        return ''.join(decrypt_text)
+    def encrypt_text(self, text: str, key: int) -> str:
+        key = int(key)
+        return "".join(self.shift_char(char, key) for char in text)
+
+    def decrypt_text(self, text: str, key: int) -> str:
+        key = int(key)
+        return "".join(self.shift_char(char, -key) for char in text)

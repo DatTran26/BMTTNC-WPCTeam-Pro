@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 02 Cipher UI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="app-header">
+            <div>
+                <p class="eyebrow">Lab 02 API</p>
+                <h1>Cipher Workbench</h1>
+            </div>
+            <span class="server-pill">Flask</span>
+        </header>
+
+        <section class="workspace" aria-label="Cipher workspace">
+            <nav class="tab-list" aria-label="Algorithms">
+                {% for algorithm in algorithms %}
+                <button
+                    class="tab-button{% if loop.first %} is-active{% endif %}"
+                    type="button"
+                    data-algorithm="{{ algorithm.id }}"
+                >
+                    {{ algorithm.name }}
+                </button>
+                {% endfor %}
+            </nav>
+
+            <form class="tool-panel" id="cipher-form">
+                <div class="field-grid">
+                    <label class="field">
+                        <span id="input-label">Input text</span>
+                        <textarea id="input-text" name="text" rows="10" spellcheck="false">Hello World</textarea>
+                    </label>
+
+                    <label class="field key-field">
+                        <span id="key-label">Key</span>
+                        <input id="cipher-key" name="key" type="text" autocomplete="off">
+                    </label>
+                </div>
+
+                <div class="action-row">
+                    <button class="primary-button" type="button" data-action="encrypt">Encrypt</button>
+                    <button class="secondary-button" type="button" data-action="decrypt">Decrypt</button>
+                    <button class="ghost-button" type="button" id="use-result">Use result</button>
+                    <button class="ghost-button" type="reset">Clear</button>
+                </div>
+
+                <label class="field result-field">
+                    <span>Result</span>
+                    <textarea id="result-text" rows="8" readonly spellcheck="false"></textarea>
+                </label>
+
+                <p class="status-line" id="status-line" role="status">Ready</p>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        window.CIPHER_ALGORITHMS = {{ algorithms|tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
