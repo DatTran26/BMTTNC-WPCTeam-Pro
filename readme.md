@@ -155,6 +155,30 @@ lab_02/ex01_API/postman/api-cipher.postman_collection.json
 lab_02/ex01_API/postman/postman-usage-guide.md
 ```
 
+### Chạy Flask API Lab 03 RSA
+
+```bash
+python lab_03/api.py
+```
+
+API RSA chạy tại:
+
+```text
+http://127.0.0.1:5000/api/rsa/generate_keys
+http://127.0.0.1:5000/api/rsa/encrypt
+http://127.0.0.1:5000/api/rsa/decrypt
+http://127.0.0.1:5000/api/rsa/sign
+http://127.0.0.1:5000/api/rsa/verify
+```
+
+Postman collection và hướng dẫn test RSA:
+
+```text
+lab_03/postman/api-cipher-with-rsa.postman_collection.json
+lab_03/postman/api-cipher-merged-with-rsa.postman_collection.json
+lab_03/postman/postman-usage-guide.md
+```
+
 ### Chạy PyQt5 UI Lab 03
 
 Mở terminal tại thư mục gốc dự án. Trước khi chạy UI, cần chạy Flask API của Lab 02 ở một terminal khác.

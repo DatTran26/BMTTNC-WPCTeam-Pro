@@ -595,5 +595,19 @@
         }
       ]
     }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:5000/api"
+    },
+    {
+      "key": "rsa_ciphertext",
+      "value": ""
+    },
+    {
+      "key": "rsa_signature",
+      "value": ""
+    }
   ]
 }

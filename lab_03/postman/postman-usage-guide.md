@@ -5,8 +5,7 @@
 Mo terminal tai thu muc goc project:
 
 ```bash
-cd lab_02/ex01_API
-python api.py
+python lab_03/api.py
 ```
 
 Mac dinh server chay tai:
@@ -24,13 +23,13 @@ Neu port `5000` bi trung, doi port khi chay Flask va sua collection variable `ba
 3. Chon file collection da cap nhat:
 
 ```text
-lab_02/ex01_API/postman/api-cipher-with-rsa.postman_collection.json
+lab_03/postman/api-cipher-with-rsa.postman_collection.json
 ```
 
 Neu ban van dung ten file cu thi co the import:
 
 ```text
-lab_02/ex01_API/postman/api-cipher.postman_collection.json
+lab_03/postman/api-cipher-merged-with-rsa.postman_collection.json
 ```
 
 4. Sau khi import se thay collection `API Cipher`.
@@ -128,6 +127,16 @@ Thu tu test nen lam nhu sau:
 4. RSA / Sign
 5. RSA / Verify
 ```
+
+Danh sach URL RSA day du:
+
+| Chuc nang | Method | URL day du | URL dung bien Postman |
+|---|---:|---|---|
+| Tao khoa | GET | `http://127.0.0.1:5000/api/rsa/generate_keys` | `{{base_url}}/rsa/generate_keys` |
+| Ma hoa | POST | `http://127.0.0.1:5000/api/rsa/encrypt` | `{{base_url}}/rsa/encrypt` |
+| Giai ma | POST | `http://127.0.0.1:5000/api/rsa/decrypt` | `{{base_url}}/rsa/decrypt` |
+| Ky chu ky so | POST | `http://127.0.0.1:5000/api/rsa/sign` | `{{base_url}}/rsa/sign` |
+| Xac thuc chu ky so | POST | `http://127.0.0.1:5000/api/rsa/verify` | `{{base_url}}/rsa/verify` |
 
 ### 4.1. Generate Keys
 
@@ -318,13 +327,13 @@ Luu y: RSA khong co request `Details / Matrix` vi RSA khong dung bang chu cai/ma
 
 ### 6.2. RSA
 
-| Chuc nang | Method | Endpoint |
-|---|---:|---|
-| Tao khoa | GET | `/rsa/generate_keys` |
-| Ma hoa | POST | `/rsa/encrypt` |
-| Giai ma | POST | `/rsa/decrypt` |
-| Ky chu ky so | POST | `/rsa/sign` |
-| Xac thuc chu ky so | POST | `/rsa/verify` |
+| Chuc nang | Method | Endpoint | URL day du |
+|---|---:|---|---|
+| Tao khoa | GET | `/rsa/generate_keys` | `http://127.0.0.1:5000/api/rsa/generate_keys` |
+| Ma hoa | POST | `/rsa/encrypt` | `http://127.0.0.1:5000/api/rsa/encrypt` |
+| Giai ma | POST | `/rsa/decrypt` | `http://127.0.0.1:5000/api/rsa/decrypt` |
+| Ky chu ky so | POST | `/rsa/sign` | `http://127.0.0.1:5000/api/rsa/sign` |
+| Xac thuc chu ky so | POST | `/rsa/verify` | `http://127.0.0.1:5000/api/rsa/verify` |
 
 ## 7. Body mau
 
