@@ -1,3 +1,4 @@
 Flask>=3.0
 requests>=2.31
 PyQt5>=5.15
+rsa>=4.9
