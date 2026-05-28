@@ -183,6 +183,8 @@ Trong Postman collection, request `RSA / Encrypt` da co script tu dong luu ket q
 rsa_ciphertext
 ```
 
+Neu `RSA / Decrypt` bao loi `Field ciphertext must be hexadecimal text`, nghia la bien `rsa_ciphertext` dang rong hoac chua duoc set. Chay lai `RSA / Encrypt` truoc, hoac copy gia tri `encrypted_message` tu response Encrypt dan vao field `ciphertext` cua request Decrypt.
+
 ### 4.3. Decrypt
 
 Dung private key de giai ma noi dung da ma hoa.

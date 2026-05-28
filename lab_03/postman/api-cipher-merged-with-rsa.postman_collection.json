@@ -526,6 +526,18 @@
           },
           "event": [
             {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const ciphertext = pm.collectionVariables.get(\"rsa_ciphertext\");",
+                  "if (!ciphertext) {",
+                  "    throw new Error(\"Run RSA / Encrypt first to set rsa_ciphertext.\");",
+                  "}"
+                ]
+              }
+            },
+            {
               "listen": "test",
               "script": {
                 "type": "text/javascript",

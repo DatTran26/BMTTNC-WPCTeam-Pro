@@ -477,7 +477,22 @@
                     }
                   }
                 }
-              }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "const jsonData = pm.response.json();",
+                      "pm.collectionVariables.set(\"rsa_ciphertext\", jsonData.encrypted_message || jsonData.ciphertext || jsonData.encrypted_text || jsonData.result);"
+                    ]
+                  }
+                }
+              ]
             },
             {
               "name": "Decrypt",
@@ -501,7 +516,32 @@
                     }
                   }
                 }
-              }
+              },
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "const ciphertext = pm.collectionVariables.get(\"rsa_ciphertext\");",
+                      "if (!ciphertext) {",
+                      "    throw new Error(\"Run RSA / Encrypt first to set rsa_ciphertext.\");",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});"
+                    ]
+                  }
+                }
+              ]
             },
             {
               "name": "Sign",
