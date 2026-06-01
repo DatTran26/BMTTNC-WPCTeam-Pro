@@ -2,8 +2,10 @@ import rsa
 from flask import Flask, jsonify, request
 
 if __package__:
+    from .cipher.ecc import ECCCipher
     from .cipher.rsa import RSACipher
 else:
+    from cipher.ecc import ECCCipher
     from cipher.rsa import RSACipher
 
 app = Flask(__name__)
@@ -11,6 +13,8 @@ app = Flask(__name__)
 # RSA CIPHER ALGORITHM
 rsa_cipher = RSACipher()
 
+# ECC CIPHER ALGORITHM
+ecc_cipher = ECCCipher()
 
 def error_response(message, status_code=400):
     return jsonify({'error': message}), status_code
@@ -38,6 +42,14 @@ def load_rsa_keys():
     except ValueError:
         return None, error_response('RSA key files are invalid. Generate keys again')
 
+
+def load_ecc_keys():
+    try:
+        return ecc_cipher.load_keys(), None
+    except FileNotFoundError:
+        return None, error_response('ECC keys not found. Call /api/ecc/generate_keys first')
+    except ValueError:
+        return None, error_response('ECC key files are invalid. Generate keys again')
 
 def decode_hex_value(value, field_name):
     try:
@@ -170,6 +182,56 @@ def rsa_verify_signature():
 
     return jsonify({'is_verified': is_verified})
 
+@app.route('/api/ecc/generate_keys', methods=['GET'])
+def ecc_generate_keys():
+    ecc_cipher.generate_keys()
+    return jsonify({'message': 'Keys generated successfully'})
+
+@app.route('/api/ecc/sign', methods=['POST'])
+def ecc_sign_message():
+    data, error = get_json_data()
+    if error:
+        return error
+
+    message, error = get_required_text(data, 'message')
+    if error:
+        return error
+
+    keys, error = load_ecc_keys()
+    if error:
+        return error
+
+    private_key, _public_key = keys
+    signature = ecc_cipher.sign(message, private_key)
+
+    return jsonify({'signature': signature.hex()})
+
+@app.route('/api/ecc/verify', methods=['POST'])
+def ecc_verify_signature():
+    data, error = get_json_data()
+    if error:
+        return error
+
+    message, error = get_required_text(data, 'message')
+    if error:
+        return error
+
+    signature_hex, error = get_required_text(data, 'signature')
+    if error:
+        return error
+
+    signature, error = decode_hex_value(signature_hex, 'signature')
+    if error:
+        return error
+
+    keys, error = load_ecc_keys()
+    if error:
+        return error
+
+    _private_key, public_key = keys
+    is_verified = ecc_cipher.verify(message, signature, public_key)
+
+    return jsonify({'is_verified': is_verified})
 
 # main function
 if __name__ == "__main__":

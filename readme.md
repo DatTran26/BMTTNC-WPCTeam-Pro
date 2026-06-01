@@ -155,7 +155,7 @@ lab_02/ex01_API/postman/api-cipher.postman_collection.json
 lab_02/ex01_API/postman/postman-usage-guide.md
 ```
 
-### Chạy Flask API Lab 03 RSA
+### Chạy Flask API Lab 03 RSA/ECC
 
 ```bash
 python lab_03/api.py
@@ -171,7 +171,15 @@ http://127.0.0.1:5000/api/rsa/sign
 http://127.0.0.1:5000/api/rsa/verify
 ```
 
-Postman collection và hướng dẫn test RSA:
+API ECC chạy tại:
+
+```text
+http://127.0.0.1:5000/api/ecc/generate_keys
+http://127.0.0.1:5000/api/ecc/sign
+http://127.0.0.1:5000/api/ecc/verify
+```
+
+Postman collection và hướng dẫn test RSA/ECC:
 
 ```text
 lab_03/postman/api-cipher-with-rsa.postman_collection.json
@@ -181,7 +189,7 @@ lab_03/postman/postman-usage-guide.md
 
 ### Chạy PyQt5 UI Lab 03
 
-Mở terminal tại thư mục gốc dự án. Trước khi chạy UI, cần chạy Flask API của Lab 02 ở một terminal khác.
+Mở terminal tại thư mục gốc dự án. Trước khi chạy UI Caesar, cần chạy Flask API của Lab 02 ở một terminal khác.
 
 ```bash
 python lab_03/caesar_cipher.py
@@ -192,6 +200,12 @@ python lab_03/caesar_cipher.py
 ```text
 http://127.0.0.1:5000/api/caesar/encrypt
 http://127.0.0.1:5000/api/caesar/decrypt
+```
+
+Chạy UI ECC sau khi chạy Flask API Lab 03:
+
+```bash
+python lab_03/ecc_cipher.py
 ```
 
 ## Danh sách file, chức năng và giải thích
