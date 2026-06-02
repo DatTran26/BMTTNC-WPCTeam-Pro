@@ -90,8 +90,7 @@ BMTTNC-WPCTeam-Pro/
 |   |       |-- requirements.txt
 |   |       `-- rsa_cipher.py
 |   |-- postman/
-|   |   |-- api-cipher-merged-with-rsa.postman_collection.json
-|   |   |-- api-cipher-with-rsa.postman_collection.json
+|   |   |-- api-cipher-rsa-ecc.postman_collection.json
 |   |   `-- postman-usage-guide.md
 |   |-- ui/
 |   |   |-- caesar.py
@@ -105,6 +104,13 @@ BMTTNC-WPCTeam-Pro/
 |       |-- qoffscreen.dll
 |       |-- qwebgl.dll
 |       `-- qwindows.dll
+|-- docs-en/
+|   |-- README.md
+|   |-- api-and-postman-guide.md
+|   |-- formatting-audit.md
+|   |-- project-overview.md
+|   |-- repository-structure.md
+|   `-- setup-and-run-guide.md
 |-- img/
 |-- .gitignore
 |-- AGENTS.md
@@ -220,8 +226,7 @@ http://127.0.0.1:5000/api/ecc/verify
 Postman collection và hướng dẫn test RSA/ECC:
 
 ```text
-lab_03/postman/api-cipher-with-rsa.postman_collection.json
-lab_03/postman/api-cipher-merged-with-rsa.postman_collection.json
+lab_03/postman/api-cipher-rsa-ecc.postman_collection.json
 lab_03/postman/postman-usage-guide.md
 ```
 

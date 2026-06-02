@@ -23,17 +23,11 @@ Neu port `5000` bi trung, doi port khi chay Flask va sua collection variable `ba
 3. Chon file collection da cap nhat:
 
 ```text
-lab_03/postman/api-cipher-with-rsa.postman_collection.json
-```
-
-Neu ban van dung ten file cu thi co the import:
-
-```text
-lab_03/postman/api-cipher-merged-with-rsa.postman_collection.json
+lab_03/postman/api-cipher-rsa-ecc.postman_collection.json
 ```
 
 4. Sau khi import se thay collection `API Cipher`.
-5. Cau truc collection sau khi bo sung RSA:
+5. Cau truc collection moi nhat:
 
 ```text
 API Cipher
@@ -57,10 +51,14 @@ API Cipher
 |   |-- POST Encrypt
 |   |-- POST Decrypt
 |   `-- POST Details / Matrix
-`-- RSA
+|-- RSA
+|   |-- GET Generate Keys
+|   |-- POST Encrypt
+|   |-- POST Decrypt
+|   |-- POST Sign
+|   `-- POST Verify
+`-- ECC
     |-- GET Generate Keys
-    |-- POST Encrypt
-    |-- POST Decrypt
     |-- POST Sign
     `-- POST Verify
 ```
@@ -282,7 +280,40 @@ Neu message bi thay doi hoac signature sai, ket qua co the la:
 }
 ```
 
-## 5. Xem ma tran trong Postman
+## 5. Cach test nhanh ECC
+
+ECC co 3 request:
+
+```text
+ECC
+|-- GET Generate Keys
+|-- POST Sign
+`-- POST Verify
+```
+
+Thu tu test nen lam nhu sau:
+
+```text
+1. ECC / Generate Keys
+2. ECC / Sign
+3. ECC / Verify
+```
+
+Danh sach URL ECC day du:
+
+| Chuc nang | Method | URL day du | URL dung bien Postman |
+|---|---:|---|---|
+| Tao khoa | GET | `http://127.0.0.1:5000/api/ecc/generate_keys` | `{{base_url}}/ecc/generate_keys` |
+| Ky chu ky so | POST | `http://127.0.0.1:5000/api/ecc/sign` | `{{base_url}}/ecc/sign` |
+| Xac thuc chu ky so | POST | `http://127.0.0.1:5000/api/ecc/verify` | `{{base_url}}/ecc/verify` |
+
+Request `ECC / Sign` tu dong luu chu ky vao bien:
+
+```text
+ecc_signature
+```
+
+## 6. Xem ma tran trong Postman
 
 Request `Details / Matrix` dung chung endpoint:
 
@@ -311,11 +342,11 @@ Ket qua nam trong field `details`.
 
 Trong Postman, chon tab `Body` cua response va de che do `Pretty` + `JSON` de nhin ma tran ro hon.
 
-Luu y: RSA khong co request `Details / Matrix` vi RSA khong dung bang chu cai/ma tran nhu cac thuat toan co dien.
+Luu y: RSA va ECC khong co request `Details / Matrix` vi khong dung bang chu cai/ma tran nhu cac thuat toan co dien.
 
-## 6. Danh sach endpoint
+## 7. Danh sach endpoint
 
-### 6.1. Cipher co dien
+### 7.1. Cipher co dien
 
 | Thuat toan | Encrypt | Decrypt | Details |
 |---|---|---|---|
@@ -325,7 +356,7 @@ Luu y: RSA khong co request `Details / Matrix` vi RSA khong dung bang chu cai/ma
 | Rail Fence | `POST /railfence/encrypt` | `POST /railfence/decrypt` | `POST /railfence/details` |
 | Transposition | `POST /transposition/encrypt` | `POST /transposition/decrypt` | `POST /transposition/details` |
 
-### 6.2. RSA
+### 7.2. RSA
 
 | Chuc nang | Method | Endpoint | URL day du |
 |---|---:|---|---|
@@ -335,9 +366,17 @@ Luu y: RSA khong co request `Details / Matrix` vi RSA khong dung bang chu cai/ma
 | Ky chu ky so | POST | `/rsa/sign` | `http://127.0.0.1:5000/api/rsa/sign` |
 | Xac thuc chu ky so | POST | `/rsa/verify` | `http://127.0.0.1:5000/api/rsa/verify` |
 
-## 7. Body mau
+### 7.3. ECC
 
-### 7.1. Body mau cho cipher co dien
+| Chuc nang | Method | Endpoint | URL day du |
+|---|---:|---|---|
+| Tao khoa | GET | `/ecc/generate_keys` | `http://127.0.0.1:5000/api/ecc/generate_keys` |
+| Ky chu ky so | POST | `/ecc/sign` | `http://127.0.0.1:5000/api/ecc/sign` |
+| Xac thuc chu ky so | POST | `/ecc/verify` | `http://127.0.0.1:5000/api/ecc/verify` |
+
+## 8. Body mau
+
+### 8.1. Body mau cho cipher co dien
 
 Encrypt:
 
@@ -366,7 +405,7 @@ Details:
 }
 ```
 
-### 7.2. Body mau cho RSA
+### 8.2. Body mau cho RSA
 
 Generate Keys khong can body.
 
@@ -405,7 +444,24 @@ Verify:
 }
 ```
 
-## 8. Collection Variables
+### 8.3. Body mau cho ECC
+
+Generate Keys khong can body.
+
+Sign:
+
+```text
+message: HUTECH University
+```
+
+Verify:
+
+```text
+message: HUTECH University
+signature: {{ecc_signature}}
+```
+
+## 9. Collection Variables
 
 Collection dang su dung cac bien sau:
 
@@ -419,10 +475,11 @@ Collection dang su dung cac bien sau:
 | `transposition_cipher_text` | Luu ket qua ma hoa Transposition |
 | `rsa_ciphertext` | Luu ket qua ma hoa RSA |
 | `rsa_signature` | Luu chu ky so RSA |
+| `ecc_signature` | Luu chu ky so ECC |
 
 Neu doi host/port, vao collection `API Cipher` -> `Variables` -> sua `base_url`.
 
-## 9. Luu y
+## 10. Luu y
 
 - `Caesar` va `Rail Fence` dung key dang so.
 - `Vigenere`, `Playfair`, `Transposition` dung key dang chuoi.
@@ -432,3 +489,5 @@ Neu doi host/port, vao collection `API Cipher` -> `Variables` -> sua `base_url`.
 - RSA ma hoa bang `public key` va giai ma bang `private key`.
 - RSA ky chu ky so bang `private key` va xac thuc chu ky so bang `public key`.
 - Neu request RSA bi loi do khong tim thay key, kiem tra folder `key` da co `publicKey.pem` va `privateKey.pem` chua.
+- ECC can chay `Generate Keys` truoc khi `Sign` va `Verify`.
+- ECC ky chu ky so bang `private key` va xac thuc chu ky so bang `public key`.

@@ -1,8 +1,8 @@
 {
   "info": {
     "_postman_id": "7b4db3c0-54a4-4f6c-b0cf-0d7b77f72e02",
-    "name": "API Cipher + RSA",
-    "description": "Postman collection for cipher APIs, merged from API Cipher and RSA collection. Includes Caesar, Vigenere, Playfair, Rail Fence, Transposition, and RSA endpoints.",
+    "name": "API Cipher + RSA + ECC",
+    "description": "Postman collection moi nhat cho Lab 03. Bao gom Caesar, Vigenere, Playfair, Rail Fence, Transposition, RSA va ECC endpoints.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -627,6 +627,122 @@
           ]
         }
       ]
+    },
+    {
+      "name": "ECC",
+      "item": [
+        {
+          "name": "Generate Keys",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/ecc/generate_keys"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sign",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/ecc/sign"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"HUTECH University\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "const jsonData = pm.response.json();",
+                  "pm.collectionVariables.set(\"ecc_signature\", jsonData.signature || jsonData.result);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Verify",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/ecc/verify"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"HUTECH University\",\n  \"signature\": \"{{ecc_signature}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const signature = pm.collectionVariables.get(\"ecc_signature\");",
+                  "if (!signature) {",
+                  "    throw new Error(\"Run ECC / Sign first to set ecc_signature.\");",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "variable": [
@@ -660,6 +776,10 @@
     },
     {
       "key": "rsa_signature",
+      "value": ""
+    },
+    {
+      "key": "ecc_signature",
       "value": ""
     }
   ]
