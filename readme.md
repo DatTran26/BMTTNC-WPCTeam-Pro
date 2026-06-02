@@ -26,55 +26,91 @@ Mục tiêu:
 
 ```text
 BMTTNC-WPCTeam-Pro/
-├── lab_01/
-│   ├── Text_01.py
-│   ├── explain/
-│   │   └── Text_01.md
-│   ├── ex01/
-│   │   ├── Text_01.py
-│   │   └── explain/
-│   │       └── Text_01.md
-│   ├── ex02/
-│   │   ├── ex02_01.py ... ex02_10.py
-│   │   └── explain/
-│   │       ├── ex02_01.md ... ex02_10.md
-│   ├── ex03/
-│   │   ├── ex03_01.py ... ex03_06.py
-│   │   └── explain/
-│   │       ├── ex03_01.md ... ex03_06.md
-│   └── ex04/
-│       ├── main.py
-│       ├── QuanLySinhVien.py
-│       ├── SinhVien.py
-│       └── explain/
-│           ├── main.md
-│           ├── QuanLySinhVien.md
-│           └── SinhVien.md
-├── lab_02/
-│   ├── ex01/
-│   │   ├── Caesar.py
-│   │   └── Vigenere.py
-│   └── ex01_API/
-│       ├── api.py
-│       ├── cipher/
-│       │   ├── caesar/
-│       │   ├── playfair/
-│       │   ├── railfence/
-│       │   ├── transposition/
-│       │   └── vigenere/
-│       ├── postman/
-│       ├── static/
-│       └── templates/
-├── lab_03/
-│   ├── caesar_cipher.py
-│   ├── ui/
-│   │   ├── caesar.py
-│   │   └── caesar.ui
-│   └── platform/
-├── img/
-├── LICENSE
-├── requirements.txt
-└── readme.md
+|-- lab_01/
+|   |-- Text_01.py
+|   |-- explain/
+|   |   `-- Text_01.md
+|   |-- ex01/
+|   |   |-- Text_01.py
+|   |   `-- explain/
+|   |       `-- Text_01.md
+|   |-- ex02/
+|   |   |-- ex02_01.py ... ex02_10.py
+|   |   `-- explain/
+|   |       `-- ex02_01.md ... ex02_10.md
+|   |-- ex03/
+|   |   |-- ex03_01.py ... ex03_06.py
+|   |   `-- explain/
+|   |       `-- ex03_01.md ... ex03_06.md
+|   `-- ex04/
+|       |-- main.py
+|       |-- QuanLySinhVien.py
+|       |-- SinhVien.py
+|       `-- explain/
+|           |-- main.md
+|           |-- QuanLySinhVien.md
+|           `-- SinhVien.md
+|-- lab_02/
+|   |-- ex01/
+|   |   |-- Caesar.py
+|   |   `-- Vigenere.py
+|   `-- ex01_API/
+|       |-- api.py
+|       |-- cipher/
+|       |   |-- caesar/
+|       |   |   |-- alphabet.py
+|       |   |   `-- caesar_cipher.py
+|       |   |-- playfair/
+|       |   |   `-- playfair_cipher.py
+|       |   |-- railfence/
+|       |   |   `-- railfence_cipher.py
+|       |   |-- transposition/
+|       |   |   `-- transposition_cipher.py
+|       |   `-- vigenere/
+|       |       `-- vigener_cipher.py
+|       |-- postman/
+|       |   |-- api-cipher.postman_collection.json
+|       |   `-- postman-usage-guide.md
+|       |-- static/
+|       |   |-- app.js
+|       |   `-- styles.css
+|       |-- templates/
+|       |   `-- index.html
+|       `-- ui/
+|-- lab_03/
+|   |-- api.py
+|   |-- caesar_cipher.py
+|   |-- ecc_cipher.py
+|   |-- cipher/
+|   |   |-- ecc/
+|   |   |   |-- __init__.py
+|   |   |   `-- ecc_cipher.py
+|   |   `-- rsa/
+|   |       |-- __init__.py
+|   |       |-- requirements.txt
+|   |       `-- rsa_cipher.py
+|   |-- postman/
+|   |   |-- api-cipher-merged-with-rsa.postman_collection.json
+|   |   |-- api-cipher-with-rsa.postman_collection.json
+|   |   `-- postman-usage-guide.md
+|   |-- ui/
+|   |   |-- caesar.py
+|   |   |-- caesar.ui
+|   |   |-- ecc.py
+|   |   |-- ecc.ui
+|   |   |-- rsa.py
+|   |   `-- rsa.ui
+|   `-- platform/
+|       |-- qminimal.dll
+|       |-- qoffscreen.dll
+|       |-- qwebgl.dll
+|       `-- qwindows.dll
+|-- img/
+|-- .gitignore
+|-- AGENTS.md
+|-- LICENSE
+|-- requirements.txt
+`-- readme.md
 ```
 
 ## Yêu cầu môi trường
