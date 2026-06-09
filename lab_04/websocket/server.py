@@ -7,10 +7,8 @@ import tornado.websocket
 
 class WebSocketServer(tornado.websocket.WebSocketHandler):
     clients = set()
-
     def open(self):
         WebSocketServer.clients.add(self)
-
     def on_close(self):
         WebSocketServer.clients.remove(self)
 
@@ -19,8 +17,6 @@ class WebSocketServer(tornado.websocket.WebSocketHandler):
         print(f"Sending message {message} to {len(cls.clients)} client(s).")
         for client in cls.clients:
             client.write_message(message)
-
-
 class RandomWordSelector:
     def __init__(self, word_list):
         self.word_list = word_list
@@ -43,7 +39,6 @@ def main():
     )
     periodic_callback.start()
     io_loop.start()
-
 
 if __name__ == "__main__":
     main()

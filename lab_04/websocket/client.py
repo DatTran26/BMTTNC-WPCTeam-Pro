@@ -36,9 +36,8 @@ class WebSocketClient:
         print(f"Received word from server: {message}")
         self.connection.read_message(callback=self.on_message)
 
-
 def main():
-    io_loop = tornado.ioloop.IOLoop.current()
+    io_loop =  tornado.ioloop.IOLoop.current()
     client = WebSocketClient(io_loop)
     io_loop.add_callback(client.start)
     io_loop.start()
